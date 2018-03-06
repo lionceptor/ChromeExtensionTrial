@@ -4,13 +4,16 @@ document.addEventListener('DOMContentLoaded',function()
     var lang = "Language: \n";
     buttonCheck.addEventListener("click",function()
     {
-        chrome.tabs.detectLanguage(tab.id, function(dict)
+        chrome.tabs.getSelected(null, function(tab))
         {
-            for(var m = 0; m < dict.languages.length; m++)
+            chrome.tabs.detectLanguage(tab.id, function(dict)
             {
-                lang = lang + dict.languages[m].language + " ";
-            }
-        });
+                for(var m = 0; m < dict.languages.length; m++)
+                {
+                    lang = lang + dict.languages[m].language + " ";
+                }
+            });
+        }
         alert(lang);
     });
 });
