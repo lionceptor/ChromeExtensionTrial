@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded',function()
                 {
                     lang = lang + dict.languages[m].language + " ";
                 }
+                alert(lang);
             });
         });
-        alert(lang);
     });
 });
