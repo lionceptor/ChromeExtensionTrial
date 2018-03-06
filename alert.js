@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded',function()
     var lang = "Language: \n";
     buttonCheck.addEventListener("click",function()
     {
-        chrome.tabs.getSelected(null, function(tab))
+        chrome.tabs.getSelected(null, function(tab)
         {
             chrome.tabs.detectLanguage(tab.id, function(dict)
             {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded',function()
                     lang = lang + dict.languages[m].language + " ";
                 }
             });
-        }
+        });
         alert(lang);
     });
 });
